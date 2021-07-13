@@ -26,6 +26,7 @@ namespace MarsRoverTests
         {
             Command newCommand = new Command("MOVE", 0);
             Assert.AreEqual(newCommand.CommandType, "MOVE");
+            // by changing the command type input the test does not pass for me
         }
 
         [TestMethod]
@@ -34,6 +35,12 @@ namespace MarsRoverTests
             Command newCommand = new Command("MOVE", 20);
             Assert.AreEqual(newCommand.NewPosition, 20);
         }
+        [TestMethod]
+        public void ConsturctorSetsInitialNewModeValue()
+        {
+            Command newCommand = new Command("MODE_CHANGE", "Moving");
+            Assert.AreEqual(newCommand.NewMode, "Moving");
+        }
 
-    }
+        }
 }
